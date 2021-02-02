@@ -28,9 +28,6 @@ module.exports = {
         new webpack.DefinePlugin({
             __isBrowser__: 'true',
         }),
-        new webpack.DefinePlugin({
-            'process.env': JSON.stringify(dotenv.config().parsed),
-        })
     ],
     devtool: 'source-map'
 };
