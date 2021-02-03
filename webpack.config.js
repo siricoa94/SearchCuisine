@@ -28,6 +28,11 @@ module.exports = {
         new webpack.DefinePlugin({
             __isBrowser__: 'true',
         }),
+        new webpack.DefinePlugin({
+            'process.env': JSON.stringify(dotenv.config().parsed),
+            'REACT_APP_CUISINE_API': JSON.stringify(process.env.REACT_APP_CUISINE_API),
+            'PORT': JSON.stringify(process.env.PORT),
+        })
     ],
     devtool: 'source-map'
 };
