@@ -11,6 +11,7 @@ app.use(express.json());
 
 const REACT_APP_CUISINE_API = process.env.REACT_APP_CUISINE_API
 const env = {REACT_APP_CUISINE_API}
+
 app.get('/env.js', (req, res) => {
   res.send(`window.ENV = ${JSON.stringify(env)}`);
 });

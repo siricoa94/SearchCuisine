@@ -114,7 +114,8 @@ export default class CuisineForm extends React.Component {
         for (let i = 0; i < recipeData.steps.length; i++) {
           let steps = recipeData.steps[i].step;
           let stepNumber =  recipeData.steps[i].step + [i];
-          recipeStepsArray.push(<p key={stepNumber.toString()} value={stepNumber}>{stepNumber}: {steps}</p>);
+          let stepDisplayNumber = i + 1;
+          recipeStepsArray.push(<p key={stepNumber.toString()} value={stepNumber} className="stepsArray">{stepDisplayNumber}: {steps}</p>);
         }
         tempNutritionArray.push(<div key={[diets]} value={[i]} data-value={[i]} className="nutritionInfoDiv" style={{display: 'none'}}><div>Diets: {diets}</div><div>Weight Watcher Smart Points: {weightSmartPoints}</div><div>Health Score: {healthScore}</div><div>Spoonacular Score: {spoonacularScore}</div></div>);
         tempAlllistArray.push(<div key={[parsedObject]} value={[i]}><div className="titleFoodDiv">{parsedObject}</div><div className="imgDivHov"><img src={imgData} className="imgDataImg" onClick={this.displayButton} data-value={[i]}></img></div><div className="descriptionDiv"><div>{recipeDataFull}</div></div><div className="urlDiv">Link to Recipe Source: <a href={sourceRecipeUrl}>{sourceRecipeUrl}</a></div><div className="urlDiv">Link to Spoonacular: <a href={spoonacularUrl}>{spoonacularUrl}</a></div></div>);
