@@ -1,7 +1,7 @@
 import React from 'react';
 import {list} from "./list.js";
 
-let apiKey = process.env.REACT_APP_CUISINE_API;
+let apiKey = window.ENV.REACT_APP_CUISINE_API;
 
 
 export default class CuisineForm extends React.Component {

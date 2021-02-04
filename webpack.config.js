@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const dotenv = require('dotenv');
 
 module.exports = {
     mode: 'development',
@@ -14,7 +13,23 @@ module.exports = {
             rules: [{
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                use: 'babel-loader',
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/preset-env', {
+                                targets: {
+                                    ie: '11',
+                                    edge: '15',
+                                    safari: '10',
+                                    firefox: '50',
+                                    chrome: '49',
+                                },
+                            }],
+                            '@babel/preset-react',
+                        ],
+                    },
+                }
             },
         ],
     },
@@ -28,11 +43,6 @@ module.exports = {
         new webpack.DefinePlugin({
             __isBrowser__: 'true',
         }),
-        new webpack.DefinePlugin({
-            NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-            REACT_APP_CUISINE_API: JSON.stringify(process.env.REACT_APP_CUISINE_API),
-            PORT: JSON.stringify(process.env.PORT),
-        })
     ],
     devtool: 'source-map'
 };
