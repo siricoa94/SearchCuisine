@@ -1,5 +1,5 @@
 import React from 'react';
-let apiKey = process.env.REACT_APP_CUISINE_API;
+let apiKey = window.ENV.REACT_APP_CUISINE_API;
 
 export default class WineForm extends React.Component {
     constructor(props) {
