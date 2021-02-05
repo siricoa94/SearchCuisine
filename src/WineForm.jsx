@@ -32,7 +32,7 @@ export default class WineForm extends React.Component {
                 console.log(result.recommendedWines[i].title);
                 let title = result.recommendedWines[i].title;
                 let description = result.recommendedWines[i].description;
-                if (result.recommendedWines[i].imageUrl === "https://spoonacular.com/recipeImages/667699-312x231.jpg") {
+                if (result.recommendedWines[i].imageUrl === "https://spoonacular.com/productImages/471926-312x231.jpg") {
                     console.log("Crappy Image!");
                 } else {
                     console.log("just fine!");
